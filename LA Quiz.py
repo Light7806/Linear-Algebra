@@ -99,4 +99,14 @@ def main():
             "explanation": "Correct! Inner dimensions must match. (3,2) and (3,2) don't work. The '2' and '3' clash."
         },
         {
-            "question": "9.
+            {
+            "question": "9. To fix a Shape Mismatch error (e.g., turning rows into columns), which operation do we use?",
+            "options": [
+                "Rotate",
+                "Transpose (.T)",
+                "Inverse",
+                "Delete the matrix"
+            ],
+            "answer": "Transpose (.T)",
+            "explanation": "The Golden Rule! Flip it to fix it."
+        },
