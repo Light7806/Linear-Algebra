@@ -11,9 +11,6 @@ def main():
     # Quiz Data
     questions = [
         {
-            # Quiz Data
-    questions = [
-        {
             "question": "1. In Machine Learning, what is the main difference between a Scalar and a Vector?",
             "options": [
                 "Scalars are cooler than Vectors",
