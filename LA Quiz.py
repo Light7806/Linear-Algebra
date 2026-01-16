@@ -112,12 +112,12 @@ def main():
         {
             "question": "10. In Python code, what is the specific rule for Matrix Multiplication shape alignment?",
             "options": [
-                "(M, N) x (N, K) -> Columns of A must equal Rows of B",
-                "(M, N) x (M, N) -> Shapes must be identical",
+                "Columns of A must equal Rows of B",
+                "Shapes must be identical",
                 "There are no rules, Python is magic",
                 "Rows must always equal Rows"
             ],
-            "answer": "(M, N) x (N, K) -> Columns of A must equal Rows of B",
+            "answer": "Columns of A must equal Rows of B",
             "explanation": "100%. The inner numbers (N and N) act like a password. They must match."
         }
     ]
@@ -162,11 +162,11 @@ def main():
 
         if final_score == 10:
             st.balloons()
-            st.write("🏆 **GOD MODE.** You are ready to build the Matrix.")
+            st.write("🏆 **GOD MODE. Bhai Mujhe Pata tha tu Karlega!🔥🍃😎** You are ready to build the Matrix.")
         elif final_score >= 7:
-            st.write("🔥 **Pretty Good.** You can survive an interview.")
+            st.write("🔥 **Pretty Good.Accha kiya bhai!ek dum ja khaas!😅😉.")
         elif final_score >= 4:
-            st.write("😐 **Meh.** Did you skip the ads? Go watch the video again.")
+            st.write("😐 **Meh. Did you skip the video? Go watch the video again.")
         else:
             st.write("💀 **Emotional Damage.** You need to re-watch Season 1 immediately.")
 
