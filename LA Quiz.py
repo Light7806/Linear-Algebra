@@ -110,3 +110,65 @@ def main():
             "answer": "Transpose (.T)",
             "explanation": "The Golden Rule! Flip it to fix it."
         },
+            "question": "10. In Python code, what is the specific rule for Matrix Multiplication shape alignment?",
+            "options": [
+                "(M, N) x (N, K) -> Columns of A must equal Rows of B",
+                "(M, N) x (M, N) -> Shapes must be identical",
+                "There are no rules, Python is magic",
+                "Rows must always equal Rows"
+            ],
+            "answer": "(M, N) x (N, K) -> Columns of A must equal Rows of B",
+            "explanation": "100%. The inner numbers (N and N) act like a password. They must match."
+        }
+    ]
+
+    # Initialize Session State for Score
+    if 'score' not in st.session_state:
+        st.session_state.score = 0
+    if 'submitted' not in st.session_state:
+        st.session_state.submitted = False
+
+    # Form to hold the quiz
+    with st.form("quiz_form"):
+        user_answers = []
+        for i, q in enumerate(questions):
+            st.subheader(q["question"])
+            # Create a unique key for each radio button
+            choice = st.radio("Choose one:", q["options"], key=f"q{i}", index=None)
+            user_answers.append(choice)
+            st.write("") # Spacer
+
+        submit_button = st.form_submit_button("Submit Quiz")
+
+    # Logic after submission
+    if submit_button:
+        score = 0
+        for i, q in enumerate(questions):
+            user_choice = user_answers[i]
+            if user_choice == q["answer"]:
+                score += 1
+                st.success(f"✅ Q{i+1}: Correct! {q['explanation']}")
+            else:
+                st.error(f"❌ Q{i+1}: Wrong. The correct answer was: {q['answer']}")
+        
+        st.session_state.score = score
+        st.session_state.submitted = True
+
+    # Final Score Display
+    if st.session_state.submitted:
+        st.markdown("---")
+        final_score = st.session_state.score
+        st.header(f"Your Final Score: {final_score}/10")
+
+        if final_score == 10:
+            st.balloons()
+            st.write("🏆 **GOD MODE.** You are ready to build the Matrix.")
+        elif final_score >= 7:
+            st.write("🔥 **Pretty Good.** You can survive an interview.")
+        elif final_score >= 4:
+            st.write("😐 **Meh.** Did you skip the ads? Go watch the video again.")
+        else:
+            st.write("💀 **Emotional Damage.** You need to re-watch Season 1 immediately.")
+
+if __name__ == "__main__":
+    main()
