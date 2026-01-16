@@ -100,6 +100,7 @@ def main():
         },
         {
             {
+                {
             "question": "9. To fix a Shape Mismatch error (e.g., turning rows into columns), which operation do we use?",
             "options": [
                 "Rotate",
@@ -110,6 +111,7 @@ def main():
             "answer": "Transpose (.T)",
             "explanation": "The Golden Rule! Flip it to fix it."
         },
+        {
             "question": "10. In Python code, what is the specific rule for Matrix Multiplication shape alignment?",
             "options": [
                 "(M, N) x (N, K) -> Columns of A must equal Rows of B",
@@ -172,3 +174,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+             
